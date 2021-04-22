@@ -1,0 +1,18 @@
+bootstrap_go_package {
+    name: "soong-xiaomi-bengal-plugins",
+    pkgPath: "device/xiaomi/juice",
+    deps: [
+        "blueprint",
+        "blueprint-pathtools",
+        "soong",
+        "soong-android",
+        "soong-cc",
+        "soong-genrule",
+    ],
+    srcs: [
+        "biometrics.go",
+        "fod.go",
+        "main.go",
+    ],
+    pluginFor: ["soong_build"],
+}
