@@ -149,6 +149,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.common@1.0 \
     android.hardware.camera.provider@2.6 \
     android.hardware.camera.device@3.6
@@ -266,6 +267,9 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey \
     android.hardware.drm@1.3-service.widevine
 
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4.vendor
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \
@@ -280,20 +284,41 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_bengal
 
 PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor
+
+PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.fingerprintextension@1.0 \
     vendor.xiaomi.hardware.fingerprintextension@1.0.vendor \
     libkeymaster_messages.vendor
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
+    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
 # Cas
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor
+
 # Gnss
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-service-qti
+    android.hardware.gnss@2.1-service-qti \
+    android.hardware.gnss@2.1-impl-qti
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0.vendor \
+    android.hardware.gnss@2.1.vendor
+
+PRODUCT_PACKAGES += \
+    liblocation_api \
+    libgps.utils \
+    libbatching \
+    libgeofencing \
+    libloc_core \
+    libgnss
 
 # Power
 PRODUCT_PACKAGES += \
@@ -329,7 +354,11 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor
+    android.hidl.base@1.0.vendor \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0.vendor \
+    android.hidl.memory.block@1.0 \
+    android.hidl.memory.block@1.0.vendor
 
 PRODUCT_PACKAGES += \
     libbase \
@@ -585,6 +614,12 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+
 # RIL
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
@@ -598,11 +633,13 @@ PRODUCT_PACKAGES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
+    netutils-wrapper-1.0 \
+    android.system.net.netd@1.1.vendor
 
 # Telephony
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3-service-qti
+    android.hardware.neuralnetworks@1.3-service-qti \
+    android.hardware.neuralnetworks@1.3.vendor
 
 PRODUCT_PACKAGES += \
     ims-ext-common \
@@ -615,4 +652,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
