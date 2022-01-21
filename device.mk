@@ -593,6 +593,12 @@ PRODUCT_PACKAGES += \
     rmnetctl \
     rmnetcli
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service \
+    thermal.bengal
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
