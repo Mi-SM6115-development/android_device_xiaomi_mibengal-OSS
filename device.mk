@@ -408,9 +408,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    WifiResCommon \
-    AospWifiResOverlay
+    $(LOCAL_PATH)/overlay
 
 # Perf
 PRODUCT_PACKAGES += \
