@@ -184,6 +184,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # Dirac
 PRODUCT_PACKAGES += \
     Dirac
