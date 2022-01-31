@@ -531,6 +531,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.sensors.hal_trigger_ssr=false \
+    persist.vendor.sensors.odl.adsp=true \
+    persist.vendor.sensors.enable.rt_task=false \
+    persist.vendor.sensors.support_direct_channel=false \
+    persist.vendor.sensors.enable.bypass_worker=true
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
