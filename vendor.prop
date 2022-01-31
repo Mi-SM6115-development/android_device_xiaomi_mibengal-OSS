@@ -157,7 +157,7 @@ vendor.display.enable_posted_start_dyn=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.use_layer_ext=0
-vendor.display.use_smooth_motion=0
+vendor.display.use_smooth_motion=1
 debug.sf.disable_backpressure=1
 debug.sf.hw=1
 ebug.sf.enable_hwc_vds=1
@@ -182,6 +182,7 @@ persist.backup.ntpServer=0.pool.ntp.org
 # Graphics
 debug.egl.hw=0
 debug.mdpcomp.logs=0
+debug.sdm.support_writeback=0
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
@@ -272,4 +273,3 @@ ro.config.vc_call_vol_steps=10
 
 # WiFi
 wifi.aware.interface=wifi-aware0
-
