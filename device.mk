@@ -289,7 +289,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi_bengal
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_bengal
 
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
