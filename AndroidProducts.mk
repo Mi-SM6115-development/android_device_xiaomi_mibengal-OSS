@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nad_juice.mk
+    $(LOCAL_DIR)/lineage_mibengal.mk
 
 COMMON_LUNCH_CHOICES := \
-    nad_juice-user \
-    nad_juice-userdebug \
-    nad_juice-eng
+    lineage_mibengal-user \
+    lineage_mibengal-userdebug \
+    lineage_mibengal-eng
