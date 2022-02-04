@@ -1477,7 +1477,6 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
 vendor/bin/mi_thermald
-vendor/etc/init/init.mi_thermald.rc
 
 # Thermal Engine
 vendor/bin/thermal-engine
