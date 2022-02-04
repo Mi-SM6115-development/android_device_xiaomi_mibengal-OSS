@@ -157,7 +157,7 @@ BOARD_KERNEL_SEPARATED_DTBO := false
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6115
 TARGET_KERNEL_HEADERS := kernel/xiaomi/sm6115
-TARGET_KERNEL_CONFIG := vendor/mibengal_defconfig
+TARGET_KERNEL_CONFIG := vendor/juice_defconfig
 
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/configs/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/configs/prebuilt/dtbo.img
@@ -165,13 +165,17 @@ BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
-# Toolchain GCC
-#KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/aarch64-elf/bin
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
-
-# Toolchain Clang
+# AOSP Clang Android 12
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := clang-r416183b
+TARGET_KERNEL_CLANG_VERSION := r437112b
+
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r437112b/bin
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r437112b
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM_IAS=1 LLVM=1 LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip
+TARGET_KERNEL_ADDITIONAL_FLAGS += OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTAR=llvm-ar HOSTLD=ld.lld
+TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
