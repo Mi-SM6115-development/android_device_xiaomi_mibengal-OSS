@@ -110,12 +110,10 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/android.hardware.bluetooth@1.0.so
-vendor/lib/android.hardware.bluetooth@1.1.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/android.hardware.bluetooth@1.0.so
-vendor/lib64/android.hardware.bluetooth@1.1.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 
