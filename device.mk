@@ -192,10 +192,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsuspend
 
-# Dirac
-PRODUCT_PACKAGES += \
-    Dirac
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1 \
