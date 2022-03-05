@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/juice
+DEVICE_PATH := device/xiaomi/mibengal
 BOARD_VENDOR := xiaomi
 
 # Security patch level
@@ -44,7 +44,7 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := lime,citrus,lemon,pomelo,juice
+TARGET_OTA_ASSERT_DEVICE := lime,citrus,lemon,pomelo,mibengal
 
 # Audio
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
@@ -88,8 +88,8 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/manifest/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/manifest/framework_compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit-juice
-TARGET_RECOVERY_DEVICE_MODULES := libinit-juice
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit-mibengal
+TARGET_RECOVERY_DEVICE_MODULES := libinit-mibengal
 
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
@@ -151,8 +151,8 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_SEPARATED_DTBO := false
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADERS := kernel/xiaomi/juice
-TARGET_KERNEL_CONFIG := vendor/mibengal_defconfig
+TARGET_KERNEL_HEADERS := kernel/xiaomi/sm6115
+TARGET_KERNEL_CONFIG := vendor/<PLACEHOLDER>_defconfig
 
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/configs/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/configs/prebuilt/dtbo.img
@@ -160,13 +160,8 @@ BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
-# Toolchain GCC
-#KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/aarch64-elf/bin
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
-
-# Toolchain Clang
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := proton
+# Toolchain
+##PLACEHOLDER
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -269,4 +264,4 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Inherit from the proprietary version
-include vendor/xiaomi/juice/BoardConfigVendor.mk
+include vendor/xiaomi/mibengal/BoardConfigVendor.mk
