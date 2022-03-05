@@ -344,10 +344,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.bengal
 
-# Matlog
-PRODUCT_PACKAGES += \
-    matlog
-
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
