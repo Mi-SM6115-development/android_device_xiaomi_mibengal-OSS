@@ -71,9 +71,6 @@ void vendor_load_properties() {
         auto prop_name = "ro.product." + source + prop;
         property_override(prop_name.c_str(), value.c_str(), false);
     };
-    
-    property_override("ro.build.fingerprint", "google/sunfish/sunfish:11/RQ2A.210405.005/7181113:user/release-keys");
-    property_override("ro.build.description", "sunfish-user 11 RQ2A.210405.005 7181113 release-keys");
 
     std::string region = GetProperty("ro.boot.hwc", "");
     std::string hwname = GetProperty("ro.boot.product.hardware.sku", "");
@@ -83,7 +80,7 @@ void vendor_load_properties() {
         property_override("ro.product.device", "lime");
     } else if (hwname == "lemon") {
         property_override("ro.product.brand", "Redmi");
-        property_override("ro.product.model", "Redmi 9T");
+        property_override("ro.product.model", "Redmi 9T (NFC)");
         property_override("ro.product.device", "lemon");
     } else if (hwname == "citrus") {
         property_override("ro.product.brand", "POCO");
